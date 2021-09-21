@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install vsftpd
+    apt:
+      name: vsftpd
+      state: latest
+
+  - name: restart vsftpd server
+    service:
+      name: vsftpd
+      state: restarted
